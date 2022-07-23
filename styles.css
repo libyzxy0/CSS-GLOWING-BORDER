@@ -1,0 +1,92 @@
+@import url('https://fonts.googleapis.com/css2?family=Edu+VIC+WA+NT+Beginner:wght@500&display=swap');
+* {
+    margin: 0;
+    padding: 0;
+    font-family: 'Edu VIC WA NT Beginner', cursive;
+}
+:root {
+    --primary: #76ecb3;
+}
+body {
+    height: 100vh;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    background: #000000;
+}
+
+.box {
+    position: relative;
+    width: 300px;
+    height: 200px;
+    background: #111111;
+    text-align: center;
+    border-radius: 10px;
+}
+.title {
+    color: #ffffff;
+    margin-top: 20px;
+    font-size: 28px;
+}
+.desc {
+    color: var(--primary);
+    margin: 10px 16px;
+}
+.btn {
+    border: 0;
+    background: #1C1C1C;
+    padding: 8px 16px;
+    border-radius: 20px;
+    color: var(--primary);
+    margin-top: 10px;
+    transition: 0.2s;
+}
+.btn:hover, btn:focus {
+    background: var(--primary);
+    color: #ffffff;
+}
+.social {
+    margin-top: 15px;
+    text-align: center;
+    color: white;
+}
+.social i {
+    margin: 0 8px;
+    font-size: 20px;
+}
+.social i:hover, social i:focus {
+    color: var(--primary);
+}
+.box::before,
+.box::after {
+    content: '';
+    z-index: -1;
+    position: absolute;
+    width: calc(100% + 6px);
+    height: calc(100% + 6px);
+    top: -3px;
+    left: -3px;
+    background: linear-gradient(45deg,
+    #fc0090, #0000ff, #00ff00, #ff0000, #ffff00,
+    #fc0090, #0000ff, #00ff00, #ff0000, #ffff00
+    );
+    background-size: 300%;
+    animation: border 20s linear infinite;
+    border-radius: 12px;
+}
+
+.box::after {
+    filter: blur(40px);
+}
+
+@keyframes border {
+
+    0%, 100% {
+        background-position: 0 0;
+    }
+
+    50% {
+        background-position: 300%;
+    }
+    
+}
